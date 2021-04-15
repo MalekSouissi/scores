@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scores/authentification/splashscreen.dart';
 import 'package:scores/formulaires/screens/PageFormulaire.dart';
 
 void main() {
@@ -10,7 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: PageFormulaire(),
+      debugShowCheckedModeBanner: false,
+      home: Splash_Screen(),
     );
   }
 }
