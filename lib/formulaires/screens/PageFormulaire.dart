@@ -1,9 +1,9 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:scores/formulaires/screens/Formulaires.dart';
+import 'package:scores/profil/screens/List_doc.dart';
 import 'package:scores/shared/bottomBar.dart';
-import 'package:scores/shared/constants.dart';
+
 
 class PageFormulaire extends StatefulWidget {
   @override
@@ -17,14 +17,15 @@ class _PageFormulaireState extends State<PageFormulaire> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //extendBodyBehindAppBar: true,
-      appBar: _buildAppBar('Mes formulaires'),
-
-      body:
-      Stack(
+      body: Stack(
         children: <Widget>[
           bottomIcons == BottomIcons.list_alt
-              ? Center(child: NestedTabBar())
+              ? Center(
+            child: Text(
+              "Hi, this is forms page",
+              style: TextStyle(fontSize: 18),
+            ),
+          )
               : Container(),
           bottomIcons == BottomIcons.home
               ? Center(
@@ -36,10 +37,7 @@ class _PageFormulaireState extends State<PageFormulaire> {
               : Container(),
           bottomIcons == BottomIcons.supervisor_account_sharp
               ? Center(
-            child: Text(
-              "Hi, this is list doctors/patients page",
-              style: TextStyle(fontSize: 18),
-            ),
+            child:List_doc(),
           )
               : Container(),
           // bottomIcons == BottomIcons.Account
@@ -53,8 +51,7 @@ class _PageFormulaireState extends State<PageFormulaire> {
           Align(
             alignment: Alignment.bottomLeft,
             child: Container(
-              color: Colors.white,
-              padding: EdgeInsets.only(left: 24, right: 24, bottom: 20),
+              padding: EdgeInsets.only(left: 24, right: 24, bottom: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -103,38 +100,6 @@ class _PageFormulaireState extends State<PageFormulaire> {
             ),
           )
         ],
-      ),
-    );
-  }
-
-  PreferredSize _buildAppBar(String title){
-    return  PreferredSize(
-      preferredSize: Size(150, 140),
-      child: AppBar(
-        //toolbarHeight: 120,
-        leading: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 4),
-          child: Icon(Icons.person_add_alt_1,size:30,
-            color:DeactiveIconColor ,),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
-            child: CircleAvatar(
-              radius: 25,
-              backgroundColor: Colors.black87,
-            ),
-          )
-        ],
-        backgroundColor: Colors.transparent, // Colors.white.withOpacity(0.1),
-        elevation: 0,
-        flexibleSpace:Container(
-          margin: EdgeInsets.only(top: 100,left: 45),
-          child: Text(
-            title,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
-          ),
-        ),
-
       ),
     );
   }
