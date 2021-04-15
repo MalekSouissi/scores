@@ -28,7 +28,7 @@ class _NestedTabBarState extends State<NestedTabBar>
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-    return Column(
+    return ListView(
         //mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           TabBar(
