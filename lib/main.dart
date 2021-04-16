@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:scores/authentification/chooseprofil.dart';
-import 'package:scores/authentification/splashscreen.dart';
+import 'package:scores/formulaires/screens/PageFormulaire.dart';
 
-void main() => runApp(MyApp());
+import 'formulaires/screens/Formulaire_doc.dart';
+
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Choose_Profil(),
+      home: UserFormulaire(),
     );
   }
 }
+

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scores/widget/inputfield.dart';
-import 'package:scores/widget/roundedbutton.dart';
+import 'file:///C:/Users/Administrateur/Desktop/scores/lib/shared/roundedbutton.dart';
 
 class MdpOublie extends StatefulWidget {
   @override
