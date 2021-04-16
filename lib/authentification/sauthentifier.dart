@@ -3,6 +3,8 @@ import 'package:scores/authentification/mdpoubli%C3%A9.dart';
 import 'package:scores/widget/inputfield.dart';
 import 'package:scores/widget/roundedbutton.dart';
 
+import 'chooseprofil.dart';
+
 class Authentification extends StatefulWidget {
   @override
   _AuthentificationState createState() => _AuthentificationState();
@@ -35,7 +37,7 @@ class _AuthentificationState extends State<Authentification> {
                     BoxShadow(
                       color: Colors.black.withOpacity(0.1),
                       offset: Offset(0, 10),
-                      blurRadius: 10,
+                      blurRadius: 30,
                     ),
                   ],
                 ),
@@ -100,7 +102,12 @@ class _AuthentificationState extends State<Authentification> {
               ),
               Center(
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Choose_Profil()));
+                  },
                   child: Text(
                     'Vous n\'avez pas de compte ?',
                     style: TextStyle(
@@ -114,6 +121,7 @@ class _AuthentificationState extends State<Authentification> {
                 height: MediaQuery.of(context).size.height * 0.175,
               ),
               Rounded_Button(
+                onpressed: () {},
                 title: 'CONTINUE',
               ),
             ],

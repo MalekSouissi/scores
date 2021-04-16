@@ -82,6 +82,7 @@ class _MdpOublieState extends State<MdpOublie> {
                 height: MediaQuery.of(context).size.height * 0.3,
               ),
               Rounded_Button(
+                onpressed: () {},
                 title: 'CONTINUE',
               ),
             ],

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class Rounded_Button extends StatefulWidget {
 
   final String title;
+  final Function onpressed;
 
-  const Rounded_Button({Key key, @required this.title}) : super(key: key);
+  const Rounded_Button({Key key, @required this.title, this.onpressed}) : super(key: key);
 
   @override
   _Rounded_ButtonState createState() => _Rounded_ButtonState();
@@ -17,7 +18,7 @@ class _Rounded_ButtonState extends State<Rounded_Button> {
       width: MediaQuery.of(context).size.width * 0.85,
       child: RaisedButton(
         padding: EdgeInsets.symmetric(vertical: 20),
-        onPressed: () {},
+        onPressed: widget.onpressed,
         color: Color(0xFFE84927),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
         child: Text(
