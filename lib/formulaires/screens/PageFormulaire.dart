@@ -2,11 +2,14 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scores/formulaires/screens/Formulaires.dart';
+import 'package:scores/profil/screens/Acceuil.dart';
+import 'package:scores/profil/screens/List_doc.dart';
 import 'package:scores/shared/appbar.dart';
 import 'package:scores/shared/bottomBar.dart';
 import 'package:scores/shared/constants.dart';
 
 class PageFormulaire extends StatefulWidget {
+
   @override
   _PageFormulaireState createState() => _PageFormulaireState();
 }
@@ -14,6 +17,7 @@ class PageFormulaire extends StatefulWidget {
 enum BottomIcons { list_alt, home, supervisor_account_sharp }
 
 class _PageFormulaireState extends State<PageFormulaire> {
+
   BottomIcons bottomIcons = BottomIcons.list_alt;
   @override
   Widget build(BuildContext context) {
@@ -29,18 +33,12 @@ class _PageFormulaireState extends State<PageFormulaire> {
               : Container(),
           bottomIcons == BottomIcons.home
               ? Center(
-            child: Text(
-              "Hi, this is home page",
-              style: TextStyle(fontSize: 18),
-            ),
+            child:Acceuil(),
           )
               : Container(),
           bottomIcons == BottomIcons.supervisor_account_sharp
               ? Center(
-            child: Text(
-              "Hi, this is list doctors/patients page",
-              style: TextStyle(fontSize: 18),
-            ),
+            child: List_doc()
           )
               : Container(),
           // bottomIcons == BottomIcons.Account
@@ -110,7 +108,7 @@ class _PageFormulaireState extends State<PageFormulaire> {
 
   PreferredSize _buildAppBar(String title){
     return  PreferredSize(
-      preferredSize: Size(150, 140),
+      preferredSize: Size(MediaQuery.of(context).size.width*0.04, MediaQuery.of(context).size.height*0.08),
       child: AppBar(
         //toolbarHeight: 120,
         leading: Padding(
@@ -129,12 +127,7 @@ class _PageFormulaireState extends State<PageFormulaire> {
         ],
         backgroundColor: Colors.transparent, // Colors.white.withOpacity(0.1),
         elevation: 0,
-        flexibleSpace:Container(
-          margin: EdgeInsets.only(top: 100,left: 45),
-          child: Text(
-            title,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
-          ),
-        ),
+
 
       ),
     );
