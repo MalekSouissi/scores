@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scores/formulaires/components/form_info.dart';
@@ -17,9 +18,9 @@ class FormDetails extends StatelessWidget {
           child: CustomAppBar()),
       body: Container(
         margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.1,
+            top: MediaQuery.of(context).size.height * 0.05,
             left: MediaQuery.of(context).size.width * 0.05,
-        right: MediaQuery.of(context).size.width*0.05),
+        right: MediaQuery.of(context).size.width*0.05,),
         child: Column(
           children: [
             Row(
@@ -34,6 +35,7 @@ class FormDetails extends StatelessWidget {
                 ),
               ],
             ),
+      SizedBox(height: 10,),
       Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
@@ -68,40 +70,43 @@ class FormDetails extends StatelessWidget {
                   children: [
                     Text("details",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.blueGrey[900],
                         fontWeight: FontWeight.bold,
                       ),),
                     Text("8 questions",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.blueGrey[900],
                         fontWeight: FontWeight.w400,
                       ),),
                     Text("français",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.blueGrey[900],
                         fontWeight: FontWeight.w400,
                       ),),
                     Text("8 questions",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.blueGrey[900],
                         fontWeight: FontWeight.w400,
                       ),),
                     Text("français",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.blueGrey[900],
                         fontWeight: FontWeight.w400,
                       ),),
                   ],
                 ),
               ),
-              Rounded_Button(title: 'Debut',onpressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>FormQuestions1()));
-              },)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                child: Rounded_Button(title: 'Debut',onpressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FormQuestions1()));
+                },),
+              )
 
             ],
           )

@@ -30,6 +30,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   eva_icons_flutter: ^3.0.0
   flutter_svg: ^0.21.0+1
+  flutter_datetime_picker: ^1.5.0
+  grouped_buttons: ^1.0.4
+
+
 
 dev_dependencies:
   flutter_test:
