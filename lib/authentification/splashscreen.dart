@@ -12,7 +12,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.fromLTRB(20, 150, 5, 50),
+        padding: EdgeInsets.fromLTRB(20, 100, 0, 0),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
@@ -22,7 +22,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
               'médecins plus\n proches,\n patients en bonne\n santé.',
