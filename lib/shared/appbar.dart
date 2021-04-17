@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 
-
-PreferredSize _buildAppBar(String title) {
-  return PreferredSize(
-    preferredSize: Size(150, 140),
-    child: AppBar(
+class CustomAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
       //toolbarHeight: 120,
       leading: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -26,13 +25,6 @@ PreferredSize _buildAppBar(String title) {
       backgroundColor: Colors.transparent,
       // Colors.white.withOpacity(0.1),
       elevation: 0,
-      flexibleSpace: Container(
-        margin: EdgeInsets.only(top: 100, left: 45),
-        child: Text(
-          title, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-        ),
-      ),
-
-    ),
-  );
+    );
+  }
 }

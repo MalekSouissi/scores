@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/ASUSI7/AndroidStudioProjects/scores/lib/authentification/signup1.dart';
+import 'package:scores/authentification/doctor/signup1.dart';
+import 'package:scores/shared/roundedbutton.dart';
 import 'package:scores/widget/chooseavatar.dart';
-import 'package:scores/widget/roundedbutton.dart';
+
 
 class Choose_Profil extends StatefulWidget {
   @override
@@ -9,14 +10,7 @@ class Choose_Profil extends StatefulWidget {
 }
 
 class _Choose_ProfilState extends State<Choose_Profil> {
-  bool clickedm = false;
-  bool clickedp = false;
-
-  Color _ContainerColorm = Colors.white;
-  Color _TextColorm = Colors.black;
-
-  Color _ContainerColorp = Colors.white;
-  Color _TextColorp = Colors.black;
+  bool clicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -44,34 +38,14 @@ class _Choose_ProfilState extends State<Choose_Profil> {
                   title: 'médicin',
                   ontap: () {
                     setState(() {
-                      clickedm = true;
-                     if(clickedm == true) {
-                       _ContainerColorm = Color(0xFFE84927);
-                       _TextColorm = Colors.white;
-                       _ContainerColorp = Colors.white;
-                       _TextColorp = Colors.black;
-                     }
+                      clicked = true;
                     });
                   },
-                  ContainerColor:_ContainerColorm,
-                  TextColor: _TextColorm,
                 ),
                 Choose_Avatar(
                   image: 'assets/patient.png',
                   title: 'patient',
-                  ontap: () {
-                    setState(() {
-                      clickedp = true;
-                      if(clickedp == true) {
-                        _ContainerColorp = Color(0xFFE84927);
-                        _TextColorp = Colors.white;
-                        _ContainerColorm = Colors.white;
-                        _TextColorm = Colors.black;
-                      }
-                    });
-                  },
-                  ContainerColor:_ContainerColorp,
-                  TextColor: _TextColorp,
+                  ontap: () {},
                 ),
               ],
             ),

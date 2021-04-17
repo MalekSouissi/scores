@@ -28,7 +28,7 @@ class _IconRounded_ButtonState extends State<IconRounded_Button> {
             Text(
               widget.title,
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 15,
                   fontFamily: 'Arial',
                   color: Colors.white,
                   fontWeight: FontWeight.bold,

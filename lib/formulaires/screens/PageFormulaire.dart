@@ -1,6 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:scores/formulaires/components/header.dart';
 import 'package:scores/formulaires/screens/Formulaires.dart';
 import 'package:scores/profil/screens/Acceuil.dart';
 import 'package:scores/profil/screens/List_doc.dart';
@@ -29,7 +30,14 @@ class _PageFormulaireState extends State<PageFormulaire> {
       Stack(
         children: <Widget>[
           bottomIcons == BottomIcons.list_alt
-              ? Center(child: NestedTabBar())
+              ? Center(child: NestedTabBar(header: Header(
+            header: Padding(
+              padding: const EdgeInsets.only(left: 45),
+              child: Text(
+                'Mes formulaires',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),))
               : Container(),
           bottomIcons == BottomIcons.home
               ? Center(

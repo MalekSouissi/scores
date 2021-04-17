@@ -1,6 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:scores/formulaires/components/form_info.dart';
+import 'package:scores/formulaires/screens/form_details.dart';
 import 'package:scores/shared/constants.dart';
 
 class TaskContainer extends StatelessWidget {
@@ -8,14 +9,14 @@ class TaskContainer extends StatelessWidget {
   TaskContainer({this.isfinished});
   @override
   Widget build(BuildContext context) {
-    double height =MediaQuery.of(context).size.height * 0.18;
-    double width=MediaQuery.of(context).size.width * 0.85;
+    double height = MediaQuery.of(context).size.height * 0.18;
+    double width = MediaQuery.of(context).size.width * 0.85;
 
     return Stack(
       overflow: Overflow.visible,
       children: [
         Container(
-          height:height,
+          height: height,
           width: width,
           decoration: BoxDecoration(
               color: Colors.white,
@@ -31,8 +32,8 @@ class TaskContainer extends StatelessWidget {
           child: FormInfo(),
         ),
         Positioned(
-          top: -height*0.1,
-          left: width*0.65,
+          top: -height * 0.1,
+          left: width * 0.65,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -48,17 +49,22 @@ class TaskContainer extends StatelessWidget {
                     child: Text(
                   isfinished ? 'completé' : 'nouveau',
                   style: TextStyle(
-                      color: isfinished ? Color(0xff5C20D9) :ActiveIconColor ,
+                      color: isfinished ? Color(0xff5C20D9) : ActiveIconColor,
                       fontWeight: FontWeight.bold),
                 )),
               ),
               SizedBox(
-                height: height*0.5,
+                height: height * 0.5,
               ),
-              Icon(
-                Icons.arrow_forward_outlined,
-                size: width*0.12,
-                color: isfinished ? Color(0xff5C20D9) :ActiveIconColor ,
+              IconButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FormDetails()));
+                },
+                icon: Icon(
+                  Icons.arrow_forward_outlined,
+                  size: width * 0.12,
+                ),
+                color: isfinished ? Color(0xff5C20D9) : ActiveIconColor,
               )
             ],
           ),
