@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scores/authentification/doctor/signup1.dart';
+import 'package:scores/authentification/signup1.dart';
 import 'package:scores/shared/roundedbutton.dart';
 import 'package:scores/widget/chooseavatar.dart';
 

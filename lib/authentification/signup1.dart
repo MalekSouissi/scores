@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scores/authentification/doctor/signup2.dart';
 import 'package:scores/authentification/sauthentifier.dart';
-import 'package:scores/widget/iconroundedbutton.dart';
+import 'package:scores/shared/iconroundedbutton.dart';
 import 'package:scores/widget/inputfield.dart';
 
 class SignUp1 extends StatefulWidget {

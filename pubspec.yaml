@@ -33,7 +33,7 @@ dependencies:
   provider: ^5.0.0
   grouped_buttons: ^1.0.4
   international_phone_input: ^1.0.4
-
+  flutter_datetime_picker: ^1.5.0
 
 dev_dependencies:
   flutter_test:
