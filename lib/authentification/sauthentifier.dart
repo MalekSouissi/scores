@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scores/authentification/mdpoubli%C3%A9.dart';
+import 'package:scores/shared/roundedbutton.dart';
 import 'package:scores/widget/inputfield.dart';
-import 'file:///C:/Users/Administrateur/Desktop/scores/lib/shared/roundedbutton.dart';
+
 
 import 'chooseprofil.dart';
 

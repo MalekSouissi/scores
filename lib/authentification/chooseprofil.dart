@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scores/authentification/doctor/signup1.dart';
+import 'package:scores/shared/roundedbutton.dart';
 import 'package:scores/widget/chooseavatar.dart';
-import 'file:///C:/Users/Administrateur/Desktop/scores/lib/shared/roundedbutton.dart';
+
 
 class Choose_Profil extends StatefulWidget {
   @override

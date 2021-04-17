@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scores/profil/screens/Detail_doc.dart';
+import 'package:scores/profil/screens/Details_patient.dart';
 
 class Item_list extends StatefulWidget {
   final String text;
@@ -18,7 +19,7 @@ class _Item_listState extends State<Item_list> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap:  () {
-        Navigator.push(context, MaterialPageRoute(builder: ((context)=>Details_doc())));
+        Navigator.push(context, MaterialPageRoute(builder: ((context)=>Details_patient())));
       },
       child: Card(
         margin: const EdgeInsets.only(top: 20.0),

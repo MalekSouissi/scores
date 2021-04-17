@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scores/authentification/sauthentifier.dart';
-import 'file:///C:/Users/Administrateur/Desktop/scores/lib/shared/iconroundedbutton.dart';
+import 'package:scores/shared/iconroundedbutton.dart';
+
 import 'package:scores/widget/inputfield.dart';
-import 'file:///C:/Users/Administrateur/Desktop/scores/lib/shared/roundedbutton.dart';
+
 
 class SignUp2 extends StatefulWidget {
   @override
