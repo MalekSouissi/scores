@@ -3,7 +3,6 @@ import 'package:scores/authentification/doctor/signup2.dart';
 import 'package:scores/authentification/sauthentifier.dart';
 import 'package:scores/widget/iconroundedbutton.dart';
 import 'package:scores/widget/inputfield.dart';
-import 'package:scores/widget/roundedbutton.dart';
 
 class SignUp1 extends StatefulWidget {
   @override
@@ -29,7 +28,7 @@ class _SignUp1State extends State<SignUp1> {
               ),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                height: MediaQuery.of(context).size.height * 0.68,
+                height: MediaQuery.of(context).size.height*0.65,
                 width: MediaQuery.of(context).size.width * 0.85,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -69,17 +68,14 @@ class _SignUp1State extends State<SignUp1> {
                         ]
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 20),
-                      child: Center(
-                        child: Text(
-                          'Créer un compte',
-                          style: TextStyle(
-                            fontFamily: 'GandhiSans',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Color(0xFF0A001F),
-                          ),
+                    Center(
+                      child: Text(
+                        'Créer un compte',
+                        style: TextStyle(
+                          fontFamily: 'GandhiSans',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Color(0xFF0A001F),
                         ),
                       ),
                     ),

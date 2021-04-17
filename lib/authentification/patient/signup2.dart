@@ -64,9 +64,7 @@ class _SignUp2State extends State<SignUp2> {
                         color: Color(0xFFE84927),
                         size: 40,
                       ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      }),
+                      onPressed: () {}),
                 )
               ],
             ),
@@ -91,7 +89,7 @@ class _SignUp2State extends State<SignUp2> {
               ),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                height: MediaQuery.of(context).size.height * 0.55,
+                height: MediaQuery.of(context).size.height * 0.465,
                 width: MediaQuery.of(context).size.width * 0.85,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -109,25 +107,38 @@ class _SignUp2State extends State<SignUp2> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     RichText(
-                      text: TextSpan(children: <TextSpan>[
-                        TextSpan(
-                          text: 'étape ',
-                          style: TextStyle(
-                            fontFamily: 'GandhiSans',
-                            fontSize: 14.5,
-                            color: Color(0xFF0A001F),
+                      text: TextSpan(
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'étape ',
+                            style: TextStyle(
+                              fontFamily: 'GandhiSans',
+                              fontSize: 14.5,
+                              color: Color(0xFF0A001F),
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text: '2/2',
-                          style: TextStyle(
-                            fontFamily: 'GandhiSans',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14.5,
-                            color: Color(0xFF0A001F),
+                          TextSpan(
+                            text: '2/2',
+                            style: TextStyle(
+                              fontFamily: 'GandhiSans',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14.5,
+                              color: Color(0xFF0A001F),
+                            ),
                           ),
+                        ],
+                      ),
+                    ),
+                    Center(
+                      child: Text(
+                        'Créer un compte',
+                        style: TextStyle(
+                          fontFamily: 'GandhiSans',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Color(0xFF0A001F),
                         ),
-                      ]),
+                      ),
                     ),
                     Center(
                       child: Container(
@@ -165,51 +176,40 @@ class _SignUp2State extends State<SignUp2> {
                       ),
                     ),
                     InputField(
-                      inputHint: 'Fax',
+                      inputHint: 'adresse',
                       obscure: false,
-                    ),
-                    Center(
-                      child: GestureDetector(
-                        onTap: () {
-                          _showSingleChoiceDialog(context, widget.Choice);
-                        },
-                        child: Container(
-                          padding: EdgeInsets.all(15),
-                          height: MediaQuery.of(context).size.height * 0.065,
-                          width: MediaQuery.of(context).size.width * 0.65,
-                          decoration: BoxDecoration(
-                            border:
-                                Border.all(width: 1.5, color: Color(0xFFE7E6E9)),
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Text(
-                            widget.Choice,
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Color(0xFFABA8B3),
-                              fontFamily: 'Arial',
-                            ),
-                          ),
-                        ),
-                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 50),
                       child: ChooseGender(),
                     ),
                     InputField(
-                      inputHint: 'ADELI',
+                      inputHint: 'Numéro de sécurité',
                       obscure: false,
                     ),
-                    InputField(
-                      inputHint: 'RPPS',
-                      obscure: false,
+                    Column(
+                      children: [
+                        Center(
+                          child: Text(
+                            'En créant un compte, vous acceptez notre',
+                            style: TextStyle(
+                                fontFamily: 'GandhiSans', fontSize: 13.5),
+                          ),
+                        ),
+                        Center(
+                          child: Text(
+                            'Conditions d\'utilisation et politique de confidentialité',
+                            style: TextStyle(
+                                fontFamily: 'GandhiSans', fontSize: 13.5),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: MediaQuery.of(context).size.height*0.085,
               ),
               Center(
                 child: GestureDetector(
@@ -229,7 +229,7 @@ class _SignUp2State extends State<SignUp2> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height*0.1,
+                height: MediaQuery.of(context).size.height * 0.135,
               ),
               IconRounded_Button(
                 onpressed: () {

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:scores/authentification/chooseprofil.dart';
+import 'package:scores/authentification/doctor/signup2.dart';
 import 'package:scores/authentification/splashscreen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(
+      MyApp(),
+    );
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Choose_Profil(),
+      home: Splash_Screen(),
     );
   }
 }
