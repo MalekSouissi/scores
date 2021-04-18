@@ -20,7 +20,8 @@ class _InfoState extends State<Info> {
           Text(widget.info,
             style: TextStyle(
               fontSize: 16,
-              color: Colors.grey[900],
+              fontFamily: 'GandhiSans',
+              color: Color(0xFF0A001F),
               fontWeight: FontWeight.w700,
             ), ),
           Icon(Icons.edit, size: 30,

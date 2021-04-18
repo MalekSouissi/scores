@@ -30,8 +30,9 @@ class _AcceuilState extends State<Acceuil> {
                   Text("Patient ! ",
                     style: TextStyle(
                       fontSize: 30,
-                      color: Colors.grey[900],
                       fontWeight: FontWeight.w900,
+                      fontFamily: 'GandhiSans',
+                      color: Color(0xFF0A001F),
                     ),
                   ),
                 ],

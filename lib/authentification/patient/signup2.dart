@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:international_phone_input/international_phone_input.dart';
 import 'package:scores/authentification/sauthentifier.dart';
+import 'package:scores/lists/date.dart';
 import 'package:scores/shared/iconroundedbutton.dart';
 import 'package:scores/widget/choosegender.dart';
-import 'file:///C:/Users/ASUSI7/AndroidStudioProjects/scores/lib/lists/date.dart';
+
 import 'package:scores/widget/inputfield.dart';
 import 'package:grouped_buttons/grouped_buttons.dart';
 

@@ -45,8 +45,9 @@ class _Details_docState extends State<Details_doc> {
                      child: Text("lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit",
                        style: TextStyle(
                          fontSize: 15,
-                         color: Colors.blueGrey[900],
                          fontWeight: FontWeight.w400,
+                         fontFamily: 'GandhiSans',
+                         color: Color(0xFF0A001F),
                        ),),
                    ),
                    Align(

@@ -12,6 +12,7 @@ class _Chercher_medecinsState extends State<Chercher_medecins> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff6f6f6),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 120, horizontal: 35),
         child: Column(
@@ -21,7 +22,8 @@ class _Chercher_medecinsState extends State<Chercher_medecins> {
               "nom patient",
               style: TextStyle(
                 fontSize: 26,
-                color: Colors.grey[900],
+                fontFamily: 'GandhiSans',
+                color: Color(0xFF0A001F),
                 fontWeight: FontWeight.w700,
               ),
             ),

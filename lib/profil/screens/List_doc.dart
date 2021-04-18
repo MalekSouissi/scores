@@ -19,10 +19,11 @@ class _List_docState extends State<List_doc> {
                 padding: const EdgeInsets.only(left: 20),
                 child: Text("Liste des docteurs",
                   style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.grey[900],
-                  fontWeight: FontWeight.w700,
-                ),
+                    fontFamily: 'GandhiSans',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 29,
+                    color: Color(0xFF0A001F),
+                  ),
       )
             ),
             GridView.count(

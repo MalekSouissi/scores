@@ -52,8 +52,9 @@ class _Card_patientState extends State<Card_patient> {
                               "Dr "+ widget.nom,
                               style: TextStyle(
                                 fontSize: 16,
-                                color: Colors.grey[900],
                                 fontWeight: FontWeight.w700,
+                                fontFamily: 'GandhiSans',
+                                color: Color(0xFF0A001F),
                               ),
                             ),
                           ],
@@ -69,8 +70,9 @@ class _Card_patientState extends State<Card_patient> {
                               "Tel° "+widget.tel,
                               style: TextStyle(
                                 fontSize: 10,
-                                color: Colors.grey[900],
                                 fontWeight: FontWeight.w700,
+                                fontFamily: 'GandhiSans',
+                                color: Color(0xFF0A001F),
                               ),
                             ),
                             SizedBox(
@@ -80,7 +82,8 @@ class _Card_patientState extends State<Card_patient> {
                               "adresse: "+widget.adresse,
                               style: TextStyle(
                                 fontSize: 10,
-                                color: Colors.grey[900],
+                                fontFamily: 'GandhiSans',
+                                color: Color(0xFF0A001F),
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
@@ -103,9 +106,11 @@ class _Card_patientState extends State<Card_patient> {
                       widget.etat,
                       textAlign: TextAlign.center,
                       style: TextStyle(
+                        fontFamily: 'GandhiSans',
+                        color: Color(0xFF0A001F),
                         fontSize: 7,
                         textBaseline:TextBaseline.ideographic ,
-                        color: Colors.grey[700],
+
                         fontWeight: FontWeight.w500,
                       ),
                     ),

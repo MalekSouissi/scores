@@ -50,11 +50,12 @@ class _Item_listState extends State<Item_list> {
                   ),
                   Text(
                  "Dr "+ widget.text,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey[900],
-                    fontWeight: FontWeight.w700,
-                  ), //Textstyle
+                    style: TextStyle(
+                      fontFamily: 'GandhiSans',
+                      fontWeight: FontWeight.w900,
+                      fontSize: 17,
+                      color: Color(0xFF0A001F),
+                    ),//Textstyle
                 ), //Text
                  //SizedBox
                //SizedBox

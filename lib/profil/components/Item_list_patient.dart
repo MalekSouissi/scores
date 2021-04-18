@@ -35,8 +35,9 @@ class _ItemState extends State<Item> {
                       Text(widget.nom,
                         style: TextStyle(
                           fontSize: 20,
-                          color: Colors.grey[900],
                           fontWeight: FontWeight.w700,
+                          fontFamily: 'GandhiSans',
+                          color: Color(0xFF0A001F),
                         ),
                       ),
                       Container(

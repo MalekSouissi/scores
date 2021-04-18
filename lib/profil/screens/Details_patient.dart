@@ -13,6 +13,7 @@ class _Details_patientState extends State<Details_patient> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff6f6f6),
       body: Padding(
         padding: const EdgeInsets.all(38.0),
         child: Column(
