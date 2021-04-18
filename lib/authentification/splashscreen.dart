@@ -22,7 +22,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
               'médecins plus\n proches,\n patients en bonne\n santé.',

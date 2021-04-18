@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scores/authentification/chooseprofil.dart';
-import 'package:scores/authentification/doctor/signup2.dart';
+import 'package:scores/authentification/doctor/signupdoctor.dart';
 import 'package:scores/authentification/splashscreen.dart';
 import 'package:scores/profil/screens/Questionnaire.dart';
 import 'package:scores/profil/screens/Tache_complete.dart';
