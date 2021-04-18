@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:scores/profil/components/SimpleText.dart';
+import 'package:scores/shared/roundedbutton.dart';
 
 class Questionnaire extends StatefulWidget {
   @override
@@ -7,6 +9,9 @@ class Questionnaire extends StatefulWidget {
 }
 
 class _QuestionnaireState extends State<Questionnaire> {
+  DateTime selectedDate = DateTime.now();
+  TextEditingController _dateController = TextEditingController();
+  Task task = new Task();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,48 +38,75 @@ class _QuestionnaireState extends State<Questionnaire> {
               left: 20, top: 20.0, right: 20, bottom: 100.0),
           elevation: 3,
           shadowColor: Colors.grey,
-          child: Column(
-            children: [
-              Container(
-                width: 20,
-                child: Divider(
-                  color: Colors.grey[300],
-                  thickness: 3,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 38.0, horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SimpleText(
+                  text:
+                      "lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit",
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 38.0, horizontal: 20),
-                child: RichText(
-                  text: TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: '1 . ',
-                        style: TextStyle(
-                          fontFamily: 'GandhiSans',
-                          fontWeight: FontWeight.w900,
-                          fontSize: 14.5,
-                          color: Color(0xFF0A001F),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical:28.0, horizontal: 8),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width*0.7,
+                    child: Column(
+
+                      children: [
+                        TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Nom ',
+                          ),
                         ),
-                      ),
-                      TextSpan(
-                        text:
-                            "lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit",
-                        style: TextStyle(
-                          fontFamily: 'GandhiSans',
-                          fontSize: 14.5,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF0A001F),
+                        TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Prénom ',
+                          ),
                         ),
-                      ),
-                    ],
+                        TextFormField(
+                          onSaved: (val) {
+                            task.date = selectedDate;
+                          },
+                          controller: _dateController,
+                          keyboardType: TextInputType.datetime,
+                          decoration: InputDecoration(
+                            labelText: "Date",
+                            icon: Icon(Icons.calendar_today),
+                          ),
+                          validator: (value) {
+                            if (value.isEmpty)
+                              return "Please enter a date for your task";
+                            return null;
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+
+                SimpleText(
+                  text:
+                  "lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit.lorem ipum dolor sit",
+                ),
+                SizedBox(height: 50,),
+                Align(
+                 alignment: Alignment.bottomCenter,
+                    child: Rounded_Button(
+                      title: "Retour a l'acceuil ",
+                    )),
+
+              ],
+            ),
           ),
         ),
       ),
     );
   }
+}
+class Task {
+  String name;
+  DateTime date;
+
+  Task({this.name, this.date});
 }

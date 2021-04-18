@@ -18,7 +18,7 @@ class Tache_complete extends StatelessWidget {
                 text: TextSpan(
                   children: <TextSpan>[
                     TextSpan(
-                      text: "Bon travail !",
+                      text: "Bon travail !                ",
                       style: TextStyle(
                         fontFamily: 'GandhiSans',
                         fontWeight: FontWeight.w900,
