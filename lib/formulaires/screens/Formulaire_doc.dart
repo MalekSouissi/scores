@@ -22,7 +22,9 @@ class _UserFormulaireState extends State<UserFormulaire> {
   Widget build(BuildContext context) {
     return Scaffold(
       //extendBodyBehindAppBar: true,
-      appBar:_buildAppBar('Mes formulaires'),
+      appBar:PreferredSize(
+          preferredSize: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height*0.08),
+          child: CustomAppBar()),
 
       body:
       NestedTabBar(header: Header(header:Padding(
