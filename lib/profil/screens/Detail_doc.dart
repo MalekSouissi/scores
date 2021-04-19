@@ -1,6 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:scores/formulaires/components/user_info.dart';
 import 'package:scores/formulaires/screens/Formulaires.dart';
 import 'package:scores/shared/bottomBar.dart';
 import 'package:scores/shared/constants.dart';
@@ -21,6 +22,7 @@ class _Details_docState extends State<Details_doc> {
       body:
           Stack(
             children: [
+
               Container(
                 child: Card(
                     shape: RoundedRectangleBorder(
@@ -31,7 +33,12 @@ class _Details_docState extends State<Details_doc> {
                   shadowColor: Colors.grey,
                   child: Column(
 
+
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: User_Info(),
+                      ),
                       Container(
                         width: 20,
                         child: Divider(
