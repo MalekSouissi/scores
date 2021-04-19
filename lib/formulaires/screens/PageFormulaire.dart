@@ -1,6 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:scores/formulaires/components/header.dart';
 import 'package:scores/formulaires/screens/Formulaires.dart';
 import 'package:scores/profil/screens/Acceuil.dart';
@@ -24,7 +25,9 @@ class _PageFormulaireState extends State<PageFormulaire> {
   Widget build(BuildContext context) {
     return Scaffold(
       //extendBodyBehindAppBar: true,
-      appBar:_buildAppBar('Mes formulaires'),
+      appBar:PreferredSize(
+          preferredSize: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height*0.08),
+          child: CustomAppBar()),
 
       body:
       Stack(
@@ -41,12 +44,12 @@ class _PageFormulaireState extends State<PageFormulaire> {
               : Container(),
           bottomIcons == BottomIcons.home
               ? Center(
-            child:Acceuil(),
+            child:Acceuil(noForms: true,isdoctor:false,),
           )
               : Container(),
           bottomIcons == BottomIcons.supervisor_account_sharp
               ? Center(
-            child: List_doc()
+            child: List_doc(isdoctor: false,),
           )
               : Container(),
           // bottomIcons == BottomIcons.Account

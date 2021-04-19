@@ -13,13 +13,13 @@ class _InfoState extends State<Info> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical:12.0),
+      padding: const EdgeInsets.symmetric(vertical:20.0,),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(widget.info,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 20,
               fontFamily: 'GandhiSans',
               color: Color(0xFF0A001F),
               fontWeight: FontWeight.w700,

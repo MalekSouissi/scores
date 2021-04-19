@@ -5,6 +5,8 @@ import 'package:scores/shared/constants.dart';
 import 'package:scores/shared/roundedbutton.dart';
 
 class Details_patient extends StatefulWidget {
+  bool isdoctor = true;
+  Details_patient({this.isdoctor});
   @override
   _Details_patientState createState() => _Details_patientState();
 }
@@ -15,13 +17,18 @@ class _Details_patientState extends State<Details_patient> {
     return Scaffold(
       backgroundColor: Color(0xfff6f6f6),
       body: Padding(
-        padding: const EdgeInsets.all(38.0),
+        padding: const EdgeInsets.symmetric(horizontal: 38,vertical: 50),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                Text("nom patient",
+                widget.isdoctor?Text("nom docteur",
+                  style: TextStyle(
+                    fontSize: 26,
+                    color: Colors.grey[900],
+                    fontWeight: FontWeight.w700,
+                  ), ):Text("nom patient",
                   style: TextStyle(
                     fontSize: 26,
                     color: Colors.grey[900],
@@ -49,7 +56,11 @@ class _Details_patientState extends State<Details_patient> {
 
              ],
            )),
-            Rounded_Button(title: "Confirmer")
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Rounded_Button(title: "Confirmer",onpressed: (){
+              },),
+            )
           ],
         ),
       ),

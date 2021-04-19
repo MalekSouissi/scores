@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:scores/profil/screens/Chercher_medecins.dart';
+import 'package:scores/profil/screens/Details_patient.dart';
 
 import 'constants.dart';
 
@@ -8,17 +10,27 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       //toolbarHeight: 120,
-      leading: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-        child: Icon(Icons.person_add_alt_1, size: 30,
-          color: DeactiveIconColor,),
+      leading: GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>Chercher_medecins()));
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+          child: Icon(Icons.person_add_alt_1, size: 30,
+            color: DeactiveIconColor,),
+        ),
       ),
       actions: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
-          child: CircleAvatar(
-            radius: 25,
-            backgroundColor: Colors.black87,
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Details_patient(isdoctor: false,)));
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+            child: CircleAvatar(
+              radius: 25,
+              backgroundColor: Colors.black87,
+            ),
           ),
         )
       ],

@@ -1,4 +1,3 @@
-
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:scores/formulaires/components/info_container.dart';
@@ -11,9 +10,9 @@ class User_Info extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.only(
-              bottom: 10,
-              left: 10,
-              right: 10
+            bottom: 10,
+            left: 10,
+            right: 10
           ),
           height: MediaQuery.of(context).size.height * 0.2,
           width: MediaQuery.of(context).size.width,
@@ -25,7 +24,7 @@ class User_Info extends StatelessWidget {
                 radius: 30,
                 child: Text('T'),
               ),
-              Text('DR Hanen',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+               Text('DR Hanen',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
