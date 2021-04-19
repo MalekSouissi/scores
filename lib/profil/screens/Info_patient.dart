@@ -40,7 +40,7 @@ class _Patient_infoState extends State<Patient_info> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 margin: const EdgeInsets.only(
-                    left: 20, top: 20.0, right: 20, bottom:150.0),
+                    left: 20, top: 20.0, right: 20, bottom:120.0),
                 elevation: 3,
                 shadowColor: Colors.grey,
                 child: Column(
@@ -150,8 +150,8 @@ class _Patient_infoState extends State<Patient_info> {
                           bottomIcons == BottomIcons.supervisor_account_sharp
                               ? true
                               : false,
-                      icons: EvaIcons.peopleOutline,
-                      text: "liste doctores"),
+                      icons: Icons.assignment_ind,
+                      text: "liste des patients"),
 
                 ],
               ),

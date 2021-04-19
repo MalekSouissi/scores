@@ -1,4 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import 'Modal.dart';
 
 class Details extends StatefulWidget {
   final String Tel;
@@ -32,13 +35,13 @@ class _DetailsState extends State<Details> {
             ],
           ),
           SizedBox(
-            height:  MediaQuery.of(context).size.height * 0.01,
+            height: MediaQuery.of(context).size.height * 0.01,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Téléphone: " ,
+                "Téléphone: ",
                 style: TextStyle(
                   fontSize: 15,
                   color: Color(0xFF0A001F),
@@ -47,7 +50,7 @@ class _DetailsState extends State<Details> {
                 ),
               ),
               Text(
-                widget.Tel ,
+                widget.Tel,
                 style: TextStyle(
                   fontSize: 15,
                   color: Color(0xFF0A001F),
@@ -58,13 +61,13 @@ class _DetailsState extends State<Details> {
             ],
           ),
           SizedBox(
-            height:  MediaQuery.of(context).size.height * 0.01,
+            height: MediaQuery.of(context).size.height * 0.01,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "SSM :" ,
+                "SSM :",
                 style: TextStyle(
                   fontSize: 15,
                   color: Color(0xFF0A001F),
@@ -84,7 +87,7 @@ class _DetailsState extends State<Details> {
             ],
           ),
           SizedBox(
-            height:  MediaQuery.of(context).size.height * 0.01,
+            height: MediaQuery.of(context).size.height * 0.01,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -110,7 +113,7 @@ class _DetailsState extends State<Details> {
             ],
           ),
           SizedBox(
-            height:  MediaQuery.of(context).size.height * 0.01,
+            height: MediaQuery.of(context).size.height * 0.01,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -124,14 +127,85 @@ class _DetailsState extends State<Details> {
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              Text(
-                widget.med,
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Color(0xFF0A001F),
-                  fontFamily: 'GandhiSans',
-                  fontWeight: FontWeight.w400,
-                ),
+              Row(
+                children: [
+                  Text(
+                    widget.med,
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Color(0xFF0A001F),
+                      fontFamily: 'GandhiSans',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 6,
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.remove_red_eye_outlined),
+                    tooltip: 'Increase volume by 10',
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (ctx) => AlertDialog(
+                          content: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Modal(
+                                nom: "isam",
+                              ),
+                              Modal(
+                                nom: "isam",
+                              ),
+                              Modal(
+                                nom: "isam",
+                              ),
+                              Modal(
+                                nom: "isam",
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                            ],
+                          ),
+                          actions: <Widget>[
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(ctx).pop();
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.08,
+                                decoration:
+                                    new BoxDecoration(color: Color(0xFFE8DCFF)),
+                                child: Icon(
+                                  Icons.close,
+                                  size: 30,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            )
+
+                            // TextButton(
+                            //
+                            //          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFFE8DCFF))),
+                            //          onPressed: () {
+                            //            Navigator.of(ctx).pop();
+                            //          },
+                            //          child:  Center(
+                            //            child: Icon(Icons.close, size: 30,
+                            //              color: Colors.red,),
+                            //
+                            //        ),
+                            //    ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
             ],
           )
