@@ -4,6 +4,8 @@ import 'package:scores/formulaires/components/info_container.dart';
 import 'package:scores/shared/constants.dart';
 
 class User_Info extends StatelessWidget {
+  final String username;
+  User_Info({this.username});
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -24,7 +26,7 @@ class User_Info extends StatelessWidget {
                 radius: 30,
                 child: Text('T'),
               ),
-               Text('DR Hanen',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+               Text(username,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [

@@ -4,18 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:scores/formulaires/components/form_info.dart';
 import 'package:scores/formulaires/components/user_info.dart';
 import 'package:scores/formulaires/screens/form_questions.dart';
+import 'package:scores/formulaires/screens/form_response.dart';
 import 'package:scores/shared/appbar.dart';
 import 'package:scores/shared/constants.dart';
 import 'package:scores/shared/roundedbutton.dart';
 
 class FormDetails extends StatelessWidget {
+  final bool isfinished;
+  FormDetails({this.isfinished});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffF6F6F6),
       appBar: PreferredSize(
           preferredSize: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height*0.08),
-          child: CustomAppBar()),
+          child: CustomAppBar(changeIcon: true,)),
       body: Container(
         margin: EdgeInsets.only(
             top: MediaQuery.of(context).size.height * 0.05,
@@ -29,7 +32,10 @@ class FormDetails extends StatelessWidget {
                   radius: 25,
                   child: Text('M'),
                 ),
-                Padding(
+                isfinished?Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('Salim',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                ):Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text('Dr Hanen',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                 ),
@@ -45,10 +51,6 @@ class FormDetails extends StatelessWidget {
           shadowColor: Colors.grey,
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
-                child: User_Info(),
-              ),
               Container(
                 width: 20,
                 child: Divider(
@@ -103,7 +105,9 @@ class FormDetails extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
-                child: Rounded_Button(title: 'Debut',onpressed: (){
+                child: isfinished?Rounded_Button(title: 'Voir réponses',onpressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FormResponses()));
+                },):Rounded_Button(title: 'Début',onpressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>FormQuestions1()));
                 },),
               )

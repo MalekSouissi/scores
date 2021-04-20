@@ -15,9 +15,9 @@ class _Chercher_medecinsState extends State<Chercher_medecins> {
       backgroundColor: Color(0xfff6f6f6),
       appBar: PreferredSize(
           preferredSize: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height*0.08),
-          child: CustomAppBar()),
+          child: CustomAppBar(changeIcon: false,)),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 30),
+        padding: const EdgeInsets.symmetric( horizontal: 30),
         child: Column(
           children: [
             Text(
@@ -37,7 +37,7 @@ class _Chercher_medecinsState extends State<Chercher_medecins> {
               height: MediaQuery.of(context).size.height * 0.01,
             ),
             Container(
-              height: MediaQuery.of(context).size.height *0.6,
+              height: MediaQuery.of(context).size.height *0.7,
               child: ListView(
                 //mainAxisAlignment: MainAxisAlignment.start,
                 children: [

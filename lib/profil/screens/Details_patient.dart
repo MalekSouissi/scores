@@ -5,7 +5,7 @@ import 'package:scores/shared/constants.dart';
 import 'package:scores/shared/roundedbutton.dart';
 
 class Details_patient extends StatefulWidget {
-  bool isdoctor = true;
+  bool isdoctor;
   Details_patient({this.isdoctor});
   @override
   _Details_patientState createState() => _Details_patientState();

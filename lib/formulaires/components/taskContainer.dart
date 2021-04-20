@@ -58,7 +58,7 @@ class TaskContainer extends StatelessWidget {
               ),
               IconButton(
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FormDetails()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FormDetails(isfinished:isfinished)));
                 },
                 icon: Icon(
                   Icons.arrow_forward_outlined,

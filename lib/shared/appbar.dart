@@ -6,11 +6,14 @@ import 'constants.dart';
 
 
 class CustomAppBar extends StatelessWidget {
+  final bool changeIcon ;
+  final bool isdoctor ;
+  CustomAppBar({this.changeIcon,this.isdoctor});
   @override
   Widget build(BuildContext context) {
     return AppBar(
       //toolbarHeight: 120,
-      leading: GestureDetector(
+      leading:changeIcon? GestureDetector(
         onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (context)=>Chercher_medecins()));
         },
@@ -19,11 +22,19 @@ class CustomAppBar extends StatelessWidget {
           child: Icon(Icons.person_add_alt_1, size: 30,
             color: DeactiveIconColor,),
         ),
-      ),
+      ):GestureDetector(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            child: Icon(Icons.arrow_back, size: 30,
+              color: DeactiveIconColor,),
+          )),
       actions: [
         GestureDetector(
           onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>Details_patient(isdoctor: false,)));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Details_patient(isdoctor: isdoctor,)));
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),

@@ -75,77 +75,7 @@ class _ModuleState extends State<Module> {
                   ),
 
                   onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (ctx) => AlertDialog(
-                        content: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Modal2(
-                              nom: "isam",
-                            ),
-                            Modal2(
-                              nom: "isam",
-                            ),
-                            Modal2(
-                              nom: "isam",
-                            ),
-                            Modal2(
-                              nom: "isam",
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        ),
-                        actions: <Widget>[
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.of(ctx).pop();
-                            },
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              height:
-                              MediaQuery.of(context).size.height * 0.08,
-                              decoration:
-                              new BoxDecoration(color: Color(0xFFE8DCFF)),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text("envoyer",
-                                    style: TextStyle(
-                                    fontFamily: 'GandhiSans',
-                                    fontSize: 15,
-                                     fontWeight: FontWeight.w900,
-                                    color: ActiveIconColor,
-                                  ),),
-                                  SizedBox(width: 5,),
-                                  Icon(
-                                    Icons.send_outlined,
-                                    size: 30,
-                                    color: ActiveIconColor,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-
-                          // TextButton(
-                          //
-                          //          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFFE8DCFF))),
-                          //          onPressed: () {
-                          //            Navigator.of(ctx).pop();
-                          //          },
-                          //          child:  Center(
-                          //            child: Icon(Icons.close, size: 30,
-                          //              color: Colors.red,),
-                          //
-                          //        ),
-                          //    ),
-                        ],
-                      ),
-                    );
+_showPatientsList();
                   },
                 ),
                 Text(
@@ -157,6 +87,66 @@ class _ModuleState extends State<Module> {
                   ),
                 )
               ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+  _showPatientsList(){
+    return showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        content: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Modal2(
+              nom: "isam",
+            ),
+            Modal2(
+              nom: "isam",
+            ),
+            Modal2(
+              nom: "isam",
+            ),
+            Modal2(
+              nom: "isam",
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+        actions: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.of(ctx).pop();
+            },
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height:
+              MediaQuery.of(context).size.height * 0.08,
+              decoration:
+              new BoxDecoration(color: Color(0xFFE8DCFF)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("envoyer",
+                    style: TextStyle(
+                      fontFamily: 'GandhiSans',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w900,
+                      color: ActiveIconColor,
+                    ),),
+                  SizedBox(width: 5,),
+                  Icon(
+                    Icons.send_outlined,
+                    size: 30,
+                    color: ActiveIconColor,
+                  ),
+                ],
+              ),
             ),
           ),
         ],

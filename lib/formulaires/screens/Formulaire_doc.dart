@@ -24,12 +24,12 @@ class _UserFormulaireState extends State<UserFormulaire> {
       //extendBodyBehindAppBar: true,
       appBar:PreferredSize(
           preferredSize: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height*0.08),
-          child: CustomAppBar()),
+          child: CustomAppBar(isdoctor: true,changeIcon: true,)),
 
       body:
       NestedTabBar(header: Header(header:Padding(
         padding: const EdgeInsets.all(8.0),
-        child: User_Info(),
+        child: User_Info(username: 'Salim',),
       ) ),),
     );
   }
