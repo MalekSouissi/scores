@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scores/profil/components/Modal2.dart';
 
 class Module extends StatefulWidget {
 
@@ -64,10 +65,74 @@ class _ModuleState extends State<Module> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.send_outlined,
-                  color: Color(0xFF707070),
-                  size: 25,
+
+                IconButton(
+                  icon: const  Icon(
+                    Icons.send_outlined,
+                    color: Color(0xFF707070),
+                    size: 25,
+                  ),
+
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        content: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Modal2(
+                              nom: "isam",
+                            ),
+                            Modal2(
+                              nom: "isam",
+                            ),
+                            Modal2(
+                              nom: "isam",
+                            ),
+                            Modal2(
+                              nom: "isam",
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                          ],
+                        ),
+                        actions: <Widget>[
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(ctx).pop();
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              height:
+                              MediaQuery.of(context).size.height * 0.08,
+                              decoration:
+                              new BoxDecoration(color: Color(0xFFE8DCFF)),
+                              child: Icon(
+                                Icons.close,
+                                size: 30,
+                                color: Colors.red,
+                              ),
+                            ),
+                          )
+
+                          // TextButton(
+                          //
+                          //          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFFE8DCFF))),
+                          //          onPressed: () {
+                          //            Navigator.of(ctx).pop();
+                          //          },
+                          //          child:  Center(
+                          //            child: Icon(Icons.close, size: 30,
+                          //              color: Colors.red,),
+                          //
+                          //        ),
+                          //    ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
                 Text(
                   'envoyez',

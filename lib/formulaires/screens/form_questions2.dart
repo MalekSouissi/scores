@@ -3,9 +3,10 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:grouped_buttons/grouped_buttons.dart';
 import 'package:scores/formulaires/components/form_info.dart';
 import 'package:scores/formulaires/components/user_info.dart';
-import 'file:///C:/Users/Administrateur/Desktop/scores/lib/formulaires/screens/congrats_page.dart';
 import 'package:scores/shared/iconroundedbutton.dart';
 import 'package:scores/shared/roundedbutton.dart';
+
+import 'congrats_page.dart';
 
 class FormQuestions2 extends StatefulWidget {
   @override

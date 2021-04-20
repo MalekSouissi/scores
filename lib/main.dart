@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scores/authentification/chooseprofil.dart';
-import 'package:scores/authentification/doctor/signupdoctor.dart';
-import 'package:scores/authentification/splashscreen.dart';
-import 'package:scores/formulaires/screens/Formulaire_doc.dart';
-import 'package:scores/profil/screens/Acceuil.dart';
-import 'package:scores/profil/screens/Questionnaire.dart';
-import 'package:scores/profil/screens/Tache_complete.dart';
-
+import 'chercherform.dart';
 import 'formulaires/screens/PageFormulaire.dart';
 
 void main() => runApp(
@@ -18,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PageFormulaire(),
+      home: ChercherForm(),
     );
   }
 

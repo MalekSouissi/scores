@@ -143,7 +143,6 @@ class _DetailsState extends State<Details> {
                   ),
                   IconButton(
                     icon: const Icon(Icons.remove_red_eye_outlined),
-                    tooltip: 'Increase volume by 10',
                     onPressed: () {
                       showDialog(
                         context: context,
