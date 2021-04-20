@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scores/formulaires/components/user_info.dart';
 import 'package:scores/profil/components/Details.dart';
+import 'package:scores/profil/components/Modal3.dart';
 import 'package:scores/shared/bottomBar.dart';
 import 'package:scores/shared/constants.dart';
 
@@ -74,7 +75,7 @@ class _Patient_infoState extends State<Patient_info> {
 
 
                      Padding(
-                       padding: const EdgeInsets.symmetric(vertical:25.0),
+                       padding: const EdgeInsets.symmetric(vertical:20.0),
                        child: Row(
                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -99,7 +100,83 @@ class _Patient_infoState extends State<Patient_info> {
                                     fontFamily: 'GandhiSans',
                                     color: Color(0xFF5C20D9),
                                   ),),
-                                Icon(Icons.send, color:Color(0xFF5C20D9) ,),
+
+                                IconButton(
+                                  icon: const Icon(Icons.send, color:Color(0xFF5C20D9) ,),
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (ctx) => AlertDialog(
+                                        content: Column(
+                                          mainAxisAlignment: MainAxisAlignment.end,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Modal3(
+                                              text: "Bilan de reduction PELIV_PERINERALE",
+                                            ),
+                                            Modal3(
+                                              text: "Bilan de reduction PELIV_PERINERALE",
+                                            ),
+                                            Modal3(
+                                              text: "Bilan de reduction PELIV_PERINERALE",
+                                            ),
+                                            Modal3(
+                                              text: "Bilan de reduction PELIV_PERINERALE",
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                          ],
+                                        ),
+                                        actions: <Widget>[
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.of(ctx).pop();
+                                            },
+                                            child: Container(
+                                              width: MediaQuery.of(context).size.width,
+                                              height:
+                                              MediaQuery.of(context).size.height * 0.08,
+                                              decoration:
+                                              new BoxDecoration(color: Color(0xFFE8DCFF)),
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Text("envoyer",
+                                                    style: TextStyle(
+                                                      fontFamily: 'GandhiSans',
+                                                      fontSize: 15,
+                                                      fontWeight: FontWeight.w900,
+                                                      color: ActiveIconColor,
+                                                    ),),
+                                                  SizedBox(width: 5,),
+                                                  Icon(
+                                                    Icons.send_outlined,
+                                                    size: 30,
+                                                    color: ActiveIconColor,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          )
+
+                                          // TextButton(
+                                          //
+                                          //          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xFFE8DCFF))),
+                                          //          onPressed: () {
+                                          //            Navigator.of(ctx).pop();
+                                          //          },
+                                          //          child:  Center(
+                                          //            child: Icon(Icons.close, size: 30,
+                                          //              color: Colors.red,),
+                                          //
+                                          //        ),
+                                          //    ),
+                                        ],
+                                      ),
+                                    );
+                                  },
+                                ),
                               ],
                             ),
 

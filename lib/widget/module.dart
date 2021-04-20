@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scores/profil/components/Modal2.dart';
+import 'package:scores/shared/constants.dart';
 
 class Module extends StatefulWidget {
 
@@ -109,10 +110,23 @@ class _ModuleState extends State<Module> {
                               MediaQuery.of(context).size.height * 0.08,
                               decoration:
                               new BoxDecoration(color: Color(0xFFE8DCFF)),
-                              child: Icon(
-                                Icons.close,
-                                size: 30,
-                                color: Colors.red,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text("envoyer",
+                                    style: TextStyle(
+                                    fontFamily: 'GandhiSans',
+                                    fontSize: 15,
+                                     fontWeight: FontWeight.w900,
+                                    color: ActiveIconColor,
+                                  ),),
+                                  SizedBox(width: 5,),
+                                  Icon(
+                                    Icons.send_outlined,
+                                    size: 30,
+                                    color: ActiveIconColor,
+                                  ),
+                                ],
                               ),
                             ),
                           )
