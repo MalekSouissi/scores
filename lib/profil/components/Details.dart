@@ -129,17 +129,42 @@ class _DetailsState extends State<Details> {
               ),
               Row(
                 children: [
-                  Text(
-                    widget.med,
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Color(0xFF0A001F),
-                      fontFamily: 'GandhiSans',
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
+
                   SizedBox(
                     width: 6,
+                  ),
+                  Row(
+                    children: [
+                      Stack(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.blueGrey, //NetworkImage
+                            radius: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left:8.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.orange, //NetworkImage
+                              radius: 10,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left:18.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black45, //NetworkImage
+                              radius: 10,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left:28.0),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.blue, //NetworkImage
+                              radius: 10,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
                   ),
                   IconButton(
                     icon: const Icon(Icons.remove_red_eye_outlined),
