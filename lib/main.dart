@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scores/profil/screens/Patient_inf.dart';
+import 'package:scores/profil/screens/Recap.dart';
 import 'chercherform.dart';
-import 'formulaires/screens/PageFormulaire.dart';
+
 
 void main() => runApp(
       MyApp(),
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Patient_info(),
+      home: Recap(),
     );
   }
 
