@@ -2,6 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:scores/chercherform.dart';
 import 'package:scores/formulaires/components/header.dart';
 import 'package:scores/formulaires/screens/Formulaires.dart';
 import 'package:scores/profil/screens/Acceuil.dart';
@@ -11,12 +12,14 @@ import 'package:scores/shared/bottomBar.dart';
 import 'package:scores/shared/constants.dart';
 
 class PageFormulaire extends StatefulWidget {
-
+  bool isdoctor ;
+PageFormulaire({this.isdoctor});
   @override
   _PageFormulaireState createState() => _PageFormulaireState();
 }
 
 enum BottomIcons { list_alt, home, supervisor_account_sharp }
+
 
 class _PageFormulaireState extends State<PageFormulaire> {
 
@@ -27,29 +30,23 @@ class _PageFormulaireState extends State<PageFormulaire> {
       //extendBodyBehindAppBar: true,
       appBar:PreferredSize(
           preferredSize: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height*0.08),
-          child: CustomAppBar()),
+          child: CustomAppBar(changeIcon: true,isdoctor: widget.isdoctor,)),
 
       body:
       Stack(
         children: <Widget>[
           bottomIcons == BottomIcons.list_alt
-              ? Center(child: NestedTabBar(header: Header(
-            header: Padding(
-              padding: const EdgeInsets.only(left: 45),
-              child: Text(
-                'Mes formulaires',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),))
+              ? Center(child:_showForm(widget.isdoctor)
+          )
               : Container(),
           bottomIcons == BottomIcons.home
               ? Center(
-            child:Acceuil(noForms: true,isdoctor:false,),
+            child:Acceuil(noForms: true,isdoctor:widget.isdoctor,),
           )
               : Container(),
           bottomIcons == BottomIcons.supervisor_account_sharp
               ? Center(
-            child: List_doc(isdoctor: false,),
+            child: List_doc(isdoctor:! widget.isdoctor,),
           )
               : Container(),
           // bottomIcons == BottomIcons.Account
@@ -116,31 +113,14 @@ class _PageFormulaireState extends State<PageFormulaire> {
       ),
     );
   }
-
-  PreferredSize _buildAppBar(String title){
-    return  PreferredSize(
-      preferredSize: Size(MediaQuery.of(context).size.width*0.04, MediaQuery.of(context).size.height*0.08),
-      child: AppBar(
-        //toolbarHeight: 120,
-        leading: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 4),
-          child: Icon(Icons.person_add_alt_1,size:30,
-            color:DeactiveIconColor ,),
+  _showForm(isdoctor){
+    return isdoctor?ChercherForm():NestedTabBar(header: Header(
+      header: Padding(
+        padding: const EdgeInsets.only(left: 45),
+        child: Text(
+          'Mes formulaires',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
-            child: CircleAvatar(
-              radius: 25,
-              backgroundColor: Colors.black87,
-            ),
-          )
-        ],
-        backgroundColor: Colors.transparent, // Colors.white.withOpacity(0.1),
-        elevation: 0,
-
-
       ),
-    );
+    ),);
   }
 }

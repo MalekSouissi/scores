@@ -23,13 +23,13 @@ class _Modal2State extends State<Modal2> {
                 backgroundColor: Colors.blueGrey, //NetworkImage
                 radius: 30,
               ),
-              SizedBox(width: 5,),
+              SizedBox(width: 10,),
               Text(
                 "Dr " + widget.nom,
                 style: TextStyle(
                   fontFamily: 'GandhiSans',
-                  fontWeight: FontWeight.w900,
-                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
                   color: Color(0xFF0A001F),
                 ), //Textstyle
               ),

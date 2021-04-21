@@ -6,7 +6,7 @@ import 'package:scores/shared/recherche.dart';
 
 
 class List_doc extends StatefulWidget {
-  bool isdoctor = true;
+  bool isdoctor;
   List_doc({this.isdoctor});
   @override
   _List_docState createState() => _List_docState();
@@ -76,54 +76,42 @@ class _List_docState extends State<List_doc> {
       mainAxisSpacing: MediaQuery.of(context).size.height * 0.04,
       crossAxisCount: 2,
       children: [
-        Expanded(
-          child: Item(
-              image:
-              "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
-              nom: "Salim",
-              nb_forms: "2 formulaires a remplir",
-              text: "aa"),
-        ),
-        Expanded(
-          child: Item(
-              image:
-              "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
-              nom: "Salim",
-              nb_forms: "2 formulaires a remplir",
-              text: "aa"),
-        ),
-        Expanded(
-          child: Item(
-              image:
-              "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
-              nom: "Salim",
-              nb_forms: "2 formulaires a remplir",
-              text: "aa"),
-        ),
-        Expanded(
-          child: Item(
-              image:
-              "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
-              nom: "Salim",
-              nb_forms: "2 formulaires a remplir",
-              text: "aa"),
-        ),
-        Expanded(
-          child: Item(
-              image:
-              "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
-              nom: "Salim",
-              nb_forms: "2 formulaires a remplir",
-              text: "aa"),
-        ),
-        Expanded(
-          child: Item(
-              image:
-              "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
-              nom: "Salim",
-              nb_forms: "2 formulaires a remplir",
-              text: "aa"),
-        )
+        Item(
+            image:
+            "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
+            nom: "Salim",
+            nb_forms: "2 formulaires a remplir",
+            text: "aa"),
+        Item(
+            image:
+            "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
+            nom: "Salim",
+            nb_forms: "2 formulaires a remplir",
+            text: "aa"),
+        Item(
+            image:
+            "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
+            nom: "Salim",
+            nb_forms: "2 formulaires a remplir",
+            text: "aa"),
+        Item(
+            image:
+            "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
+            nom: "Salim",
+            nb_forms: "2 formulaires a remplir",
+            text: "aa"),
+        Item(
+            image:
+            "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
+            nom: "Salim",
+            nb_forms: "2 formulaires a remplir",
+            text: "aa"),
+        Item(
+            image:
+            "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
+            nom: "Salim",
+            nb_forms: "2 formulaires a remplir",
+            text: "aa")
       ],
     );
   }

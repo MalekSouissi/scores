@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:scores/profil/screens/Details_patient.dart';
+import 'package:scores/profil/screens/Patient_inf.dart';
 
 class Item extends StatefulWidget {
   final String text;
@@ -10,7 +12,8 @@ class Item extends StatefulWidget {
       {@required this.image,
       @required this.nom,
       @required this.nb_forms,
-      @required this.text});
+      @required this.text,
+      });
 
   @override
   _ItemState createState() => _ItemState();
@@ -22,6 +25,9 @@ class _ItemState extends State<Item> {
     return Stack(
       children: <Widget>[
         GestureDetector(
+          onTap: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Patient_info()));
+    },
           child: Card(
             margin: const EdgeInsets.only(top: 20.0),
             child: SizedBox(

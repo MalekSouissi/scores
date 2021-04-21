@@ -29,7 +29,7 @@ class _Modal3State extends State<Modal3> {
                           style: TextStyle(
                             fontFamily: 'GandhiSans',
                             fontWeight: FontWeight.w900,
-                            fontSize: 14,
+                            fontSize: 18,
                             color: Color(0xFF0A001F),
                           ),
                         children: <TextSpan>[
@@ -38,7 +38,7 @@ class _Modal3State extends State<Modal3> {
                             style: TextStyle(
                               fontFamily: 'GandhiSans',
                               fontWeight: FontWeight.w400,
-                              fontSize: 12,
+                              fontSize: 16,
                               color: Color(0xFF0A001F),
                             ),),
                         ],

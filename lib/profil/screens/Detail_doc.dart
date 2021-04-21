@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scores/formulaires/components/user_info.dart';
 import 'package:scores/formulaires/screens/Formulaires.dart';
+import 'package:scores/shared/appbar.dart';
 import 'package:scores/shared/bottomBar.dart';
 import 'package:scores/shared/constants.dart';
 import 'Acceuil.dart';
@@ -18,7 +19,9 @@ class _Details_docState extends State<Details_doc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar:_buildAppBar(),
+        appBar:PreferredSize(
+            preferredSize: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height*0.08),
+            child: CustomAppBar(changeIcon: false,)),
       body:
           Stack(
             children: [
@@ -99,58 +102,48 @@ class _Details_docState extends State<Details_doc> {
                   //SizedBox
                 ),
               ),
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: Container(
-                  color: Colors.white,
-                  padding: EdgeInsets.only(left: 24, right: 24, bottom: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      BottomBar(
-                          onPressed: () {
-                            setState(() {
-                              bottomIcons = BottomIcons.list_alt;
-                            });
-                          },
-                          bottomIcons:
-                          bottomIcons == BottomIcons.list_alt ? true : false,
-                          icons: Icons.list_alt,
-                          text: "mes formulaires"),
-                      BottomBar(
-                          onPressed: () {
-                            setState(() {
-                              bottomIcons = BottomIcons.home;
-                            });
-                          },
-                          bottomIcons:
-                          bottomIcons == BottomIcons.home ? true : false,
-                          icons: EvaIcons.homeOutline,
-                          text: "acceuil"),
-                      BottomBar(
-                          onPressed: () {
-                            setState(() {
-                              bottomIcons = BottomIcons.supervisor_account_sharp;
-                            });
-                          },
-                          bottomIcons:
-                          bottomIcons == BottomIcons.supervisor_account_sharp ? true : false,
-                          icons: EvaIcons.peopleOutline,
-                          text: "liste doctores"),
-                      // BottomBar(
-                      //     onPressed: () {
-                      //       setState(() {
-                      //         bottomIcons = BottomIcons.Account;
-                      //       });
-                      //     },
-                      //     bottomIcons:
-                      //     bottomIcons == BottomIcons.Account ? true : false,
-                      //     icons: EvaIcons.personOutline,
-                      //     text: "Account"),
-                    ],
-                  ),
-                ),
-              )
+              // Align(
+              //   alignment: Alignment.bottomLeft,
+              //   child: Container(
+              //     color: Colors.white,
+              //     padding: EdgeInsets.only(left: 24, right: 24, bottom: 20),
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //       children: <Widget>[
+              //         BottomBar(
+              //             onPressed: () {
+              //               setState(() {
+              //                 bottomIcons = BottomIcons.list_alt;
+              //               });
+              //             },
+              //             bottomIcons:
+              //             bottomIcons == BottomIcons.list_alt ? true : false,
+              //             icons: Icons.list_alt,
+              //             text: "mes formulaires"),
+              //         BottomBar(
+              //             onPressed: () {
+              //               setState(() {
+              //                 bottomIcons = BottomIcons.home;
+              //               });
+              //             },
+              //             bottomIcons:
+              //             bottomIcons == BottomIcons.home ? true : false,
+              //             icons: EvaIcons.homeOutline,
+              //             text: "acceuil"),
+              //         BottomBar(
+              //             onPressed: () {
+              //               setState(() {
+              //                 bottomIcons = BottomIcons.supervisor_account_sharp;
+              //               });
+              //             },
+              //             bottomIcons:
+              //             bottomIcons == BottomIcons.supervisor_account_sharp ? true : false,
+              //             icons: EvaIcons.peopleOutline,
+              //             text: "liste docteurs"),
+              //       ],
+              //     ),
+              //   ),
+              // )
             ],
 
           ),
@@ -159,30 +152,5 @@ class _Details_docState extends State<Details_doc> {
 
     );
   }
-  PreferredSize _buildAppBar(){
-    return  PreferredSize(
-      preferredSize: Size(MediaQuery.of(context).size.width*0.04, MediaQuery.of(context).size.height*0.08),
-      child: AppBar(
-        //toolbarHeight: 120,
-        leading: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 4),
-          child: Icon(Icons.person_add_alt_1,size:30,
-            color:DeactiveIconColor ,),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 16),
-            child: CircleAvatar(
-              radius: 25,
-              backgroundColor: Colors.black87,
-            ),
-          )
-        ],
-        backgroundColor: Colors.transparent, // Colors.white.withOpacity(0.1),
-        elevation: 0,
-
-
-      ),
-    );
   }
-}
+

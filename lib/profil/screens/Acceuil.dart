@@ -4,7 +4,7 @@ import 'package:scores/profil/components/Item_list_patient.dart';
 
 class Acceuil extends StatefulWidget {
   bool noForms = true;
-  bool isdoctor=true;
+  bool isdoctor ;
   Acceuil({this.noForms,this.isdoctor});
   @override
   _AcceuilState createState() => _AcceuilState();
