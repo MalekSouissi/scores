@@ -21,12 +21,21 @@ class _Details_docState extends State<Details_doc> {
     return Scaffold(
         appBar:PreferredSize(
             preferredSize: Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height*0.08),
-            child: CustomAppBar(changeIcon: false,)),
+            child: CustomAppBar(changeIcon: false,isdoctor: true,)),
       body:
           Stack(
             children: [
-
+              Padding(
+                padding: const EdgeInsets.only(left: 35),
+                child: Text('liste des docteurs', style: TextStyle(
+                  fontFamily: 'GandhiSans',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 30,
+                  color: Color(0xFF0A001F),
+                ),),
+              ),
               Container(
+                margin: EdgeInsets.only(top: 50),
                 child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
@@ -40,7 +49,7 @@ class _Details_docState extends State<Details_doc> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: User_Info(),
+                        child: User_Info(username: 'Dr hanen',),
                       ),
                       Container(
                         width: 20,

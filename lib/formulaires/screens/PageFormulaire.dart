@@ -41,7 +41,7 @@ class _PageFormulaireState extends State<PageFormulaire> {
               : Container(),
           bottomIcons == BottomIcons.home
               ? Center(
-            child:Acceuil(noForms: true,isdoctor:widget.isdoctor,),
+            child:Acceuil(noForms: false,isdoctor:widget.isdoctor,),
           )
               : Container(),
           bottomIcons == BottomIcons.supervisor_account_sharp
@@ -114,7 +114,7 @@ class _PageFormulaireState extends State<PageFormulaire> {
     );
   }
   _showForm(isdoctor){
-    return isdoctor?ChercherForm():NestedTabBar(header: Header(
+    return isdoctor?ChercherForm():NestedTabBar(isdoctor:isdoctor,header: Header(
       header: Padding(
         padding: const EdgeInsets.only(left: 45),
         child: Text(

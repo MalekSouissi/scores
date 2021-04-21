@@ -5,10 +5,13 @@ import 'package:scores/formulaires/components/form_info.dart';
 import 'package:scores/formulaires/components/user_info.dart';
 import 'package:scores/formulaires/screens/PageFormulaire.dart';
 import 'package:scores/formulaires/screens/form_questions2.dart';
+import 'package:scores/profil/screens/Recap.dart';
 import 'package:scores/shared/iconroundedbutton.dart';
 import 'package:scores/shared/roundedbutton.dart';
 
 class FormResponses extends StatefulWidget {
+  final bool isdoctor;
+  FormResponses({this.isdoctor});
   @override
   _FormResponsesState createState() => _FormResponsesState();
 }
@@ -185,10 +188,15 @@ class _FormResponsesState extends State<FormResponses> {
                   ),
                   Container(
                     margin: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.65, ),
-                    child: Rounded_Button(
+                    child:widget.isdoctor?Rounded_Button(
                       title: 'Retour à la page d\'acceuil',
                       onpressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>PageFormulaire()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>PageFormulaire(isdoctor: false,)));
+                      },
+                    ):Rounded_Button(
+                      title: 'Voir Score',
+                      onpressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Recap()));
                       },
                     ),
                   ),

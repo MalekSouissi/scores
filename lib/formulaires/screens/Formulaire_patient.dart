@@ -4,19 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:scores/formulaires/components/user_info.dart';
 import 'package:scores/formulaires/components/header.dart';
 import 'package:scores/formulaires/components/info_container.dart';
-import 'package:scores/formulaires/screens/Formulaires.dart';
+import 'package:scores/formulaires/screens/Formulaires1.dart';
 import 'package:scores/shared/appbar.dart';
 import 'package:scores/shared/bottomBar.dart';
 import 'package:scores/shared/constants.dart';
 
-class DocFormulaire extends StatefulWidget {
+class PatientFormulaire extends StatefulWidget {
+  final bool isdoctor ;
+  PatientFormulaire({this.isdoctor});
   @override
-  _DocFormulaireState createState() => _DocFormulaireState();
+  _PatientFormulaireState createState() => _PatientFormulaireState();
 }
 
 enum BottomIcons { list_alt, home, supervisor_account_sharp }
 
-class _DocFormulaireState extends State<DocFormulaire> {
+class _PatientFormulaireState extends State<PatientFormulaire> {
   BottomIcons bottomIcons = BottomIcons.list_alt;
   @override
   Widget build(BuildContext context) {
@@ -27,9 +29,9 @@ class _DocFormulaireState extends State<DocFormulaire> {
           child: CustomAppBar(isdoctor: true,changeIcon: true,)),
 
       body:
-      NestedTabBar(isdoctor:false, header: Header(header:Padding(
+      NestedTabBarDocteur(isdoctor:false, header: Header(header:Padding(
         padding: const EdgeInsets.all(8.0),
-        child: User_Info(username: 'Dr Hanen',),
+        child: User_Info(username: 'Salim',),
       ) ),),
     );
   }

@@ -2,7 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scores/formulaires/components/user_info.dart';
-import 'package:scores/formulaires/screens/Formulaire_doc.dart';
+import 'package:scores/formulaires/screens/Formulaire_patient.dart';
 import 'package:scores/profil/components/Details.dart';
 import 'package:scores/profil/components/Modal3.dart';
 import 'package:scores/shared/bottomBar.dart';
@@ -81,7 +81,7 @@ class _Patient_infoState extends State<Patient_info> {
                           children: [
                             GestureDetector(
                               onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>UserFormulaire()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>PatientFormulaire()));
                               },
                               child: Row(
                                 children: [

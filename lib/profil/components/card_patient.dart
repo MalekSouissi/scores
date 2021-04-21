@@ -49,7 +49,7 @@ class _Card_patientState extends State<Card_patient> {
                         Row(
                           children: [
                             Text(
-                              "Dr "+ widget.nom,
+                              widget.nom,
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w700,

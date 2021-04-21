@@ -6,7 +6,8 @@ import 'package:scores/shared/constants.dart';
 
 class TaskContainer extends StatelessWidget {
   final bool isfinished;
-  TaskContainer({this.isfinished});
+  final bool isdoctor;
+  TaskContainer({this.isfinished,this.isdoctor});
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height * 0.18;
@@ -58,7 +59,8 @@ class TaskContainer extends StatelessWidget {
               ),
               IconButton(
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FormDetails(isfinished:isfinished)));
+                  isfinished?Navigator.push(context, MaterialPageRoute(builder: (context)=>FormDetails(isfinished:false,isdoctor:isdoctor ,))):
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FormDetails(isfinished: true,isdoctor: isdoctor,)));
                 },
                 icon: Icon(
                   Icons.arrow_forward_outlined,

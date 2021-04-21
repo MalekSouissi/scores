@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:scores/profil/screens/Detail_doc.dart';
 
 class Modal extends StatefulWidget {
   final String nom ;
@@ -35,8 +36,13 @@ class _ModalState extends State<Modal> {
 
             ],
           ),
-          Icon(Icons.remove_red_eye_outlined, size: 30,
-            color: Colors.black45,),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Details_doc()));
+            },
+            child: Icon(Icons.remove_red_eye_outlined, size: 30,
+              color: Colors.black45,),
+          ),
         ],
       ),
     );

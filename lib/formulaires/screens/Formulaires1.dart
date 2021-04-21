@@ -3,15 +3,15 @@ import 'package:scores/formulaires/components/header.dart';
 import 'package:scores/formulaires/components/taskContainer.dart';
 import 'package:scores/shared/constants.dart';
 
-class NestedTabBar extends StatefulWidget {
+class NestedTabBarDocteur extends StatefulWidget {
   final Header header;
   final bool isdoctor;
-  NestedTabBar({this.header,this.isdoctor});
+  NestedTabBarDocteur({this.header,this.isdoctor});
   @override
-  _NestedTabBarState createState() => _NestedTabBarState();
+  _NestedTabBarDocteurState createState() => _NestedTabBarDocteurState();
 }
 
-class _NestedTabBarState extends State<NestedTabBar>
+class _NestedTabBarDocteurState extends State<NestedTabBarDocteur>
     with TickerProviderStateMixin {
   TabController _nestedTabController;
 
@@ -46,15 +46,11 @@ class _NestedTabBarState extends State<NestedTabBar>
               unselectedLabelColor: DeactiveIconColor,
               isScrollable: true,
               tabs: <Widget>[
-                widget.isdoctor?Tab(
+                Tab(
           text: "formulaires remplis",
-        ):Tab(
-                  text: "nouveaux formulaires",
-                ),
-                widget.isdoctor?Tab(
+        ),
+                Tab(
                   text: "formulaires en cours",
-                ):Tab(
-                  text: "formulaires finis",
                 ),
               ],
             ),
@@ -68,13 +64,13 @@ class _NestedTabBarState extends State<NestedTabBar>
                     color: Color(0xffF6F6F6),
                     child: Container(
                         height: MediaQuery.of(context).size.height,
-                        child: _buildListTasks(false,widget.isdoctor)),
+                        child: _buildListTasks(true,widget.isdoctor)),
                   ),
                   Container(
                     color: Color(0xffF6F6F6),
                     child: Container(
                         height: MediaQuery.of(context).size.height,
-                        child: _buildListTasks(true,widget.isdoctor)),
+                        child: _buildListTasks(false,widget.isdoctor)),
                   ),
                 ],
               ),

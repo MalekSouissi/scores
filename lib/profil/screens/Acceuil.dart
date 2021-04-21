@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:scores/formulaires/screens/Formulaire_doc.dart';
+import 'package:scores/formulaires/screens/Formulaire_patient.dart';
 import 'package:scores/profil/components/Item_list_patient.dart';
+import 'package:scores/profil/screens/Patient_inf.dart';
 
 class Acceuil extends StatefulWidget {
   bool noForms = true;
@@ -52,36 +55,21 @@ class _AcceuilState extends State<Acceuil> {
           Padding(
             padding: const EdgeInsets.only(top: 60),
             child: widget.noForms
-                ?_buildList(widget.isdoctor)
-                : Center(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 70),
-                      child: Column(
-                        children: [
-                          Text(
-                          'Pas de',
-                          style: TextStyle(
-                              fontSize: 40,
-                              color: Colors.grey[300],
-                              fontFamily: 'Arial'),
-                  ),
-                          Text(
-                            'nouveaux',
-                            style: TextStyle(
-                                fontSize: 40,
-                                color: Colors.grey[300],
-                                fontFamily: 'Arial'),
+                ? Center(
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(text: 'pas de \n',    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40,color: Colors.grey[400]),
                           ),
-                          Text(
-                            'formulaires',
-                            style: TextStyle(
-                                fontSize: 40,
-                                color: Colors.grey[300],
-                                fontFamily: 'Arial'),
+                          TextSpan(text: 'nouveaux\n', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40,color: Colors.grey[400])),
+                          TextSpan(text: 'formulaires',    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40,color: Colors.grey[400]),
                           ),
                         ],
                       ),
-                    )),
+                    )):_buildList(widget.isdoctor)
+                ,
           )
         ],
       ),
@@ -94,12 +82,17 @@ class _AcceuilState extends State<Acceuil> {
       mainAxisSpacing: MediaQuery.of(context).size.height * 0.04,
       crossAxisCount: 2,
       children: [
-        Item(
-            image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngnz-3bm3P7nksGQRE2P6sYYHgA15X0oMGA&usqp=CAU",
-            nom: "Dr Hanen",
-            nb_forms: "2 formulaires a remplir",
-            text: "aa"),
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>DocFormulaire()));
+          },
+          child: Item(
+              image:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngnz-3bm3P7nksGQRE2P6sYYHgA15X0oMGA&usqp=CAU",
+              nom: "Dr Hanen",
+              nb_forms: "2 formulaires a remplir",
+              text: "aa"),
+        ),
         Item(
             image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngnz-3bm3P7nksGQRE2P6sYYHgA15X0oMGA&usqp=CAU",
@@ -141,12 +134,17 @@ class _AcceuilState extends State<Acceuil> {
       mainAxisSpacing: MediaQuery.of(context).size.height * 0.04,
       crossAxisCount: 2,
       children: [
-        Item(
-            image:
-            "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
-            nom: "Salim",
-            nb_forms: "2 formulaires a remplir",
-            text: "aa"),
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>PatientFormulaire()));
+          },
+          child: Item(
+              image:
+              "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",
+              nom: "Salim",
+              nb_forms: "2 formulaires a remplir",
+              text: "aa"),
+        ),
         Item(
             image:
             "https://pinotmasters.sk/wp-content/uploads/2014/10/speaker-3.jpg",

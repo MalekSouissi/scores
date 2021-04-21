@@ -28,7 +28,7 @@ class _RecapState extends State<Recap> {
         ),
       ),
       body: Container(
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height*0.9,
         margin: EdgeInsets.only(
           //top: MediaQuery.of(context).size.height * 0.05,
             left: MediaQuery.of(context).size.width * 0.05,
@@ -43,7 +43,7 @@ class _RecapState extends State<Recap> {
             elevation: 3,
             shadowColor: Colors.grey,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical:25.0, horizontal: 30),
+          padding: const EdgeInsets.symmetric(vertical:30.0, horizontal: 30),
           child: Column(
 
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +54,7 @@ class _RecapState extends State<Recap> {
                   color: Colors.blueGrey[900],
                   fontWeight: FontWeight.w700,
                 ),),
-              SizedBox(height: 17,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
               Container(
                 width: MediaQuery.of(context).size.width*0.9,
                 child: Text("BILAN DE REDUCATION PELVI-PERINALE",
@@ -64,21 +64,21 @@ class _RecapState extends State<Recap> {
                     fontWeight: FontWeight.w400,
                   ),),
               ),
-              SizedBox(height: 17,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02,),
               Text("12/5/2020",
                 style: TextStyle(
                   fontSize: 15,
                   color: Colors.blueGrey[900],
                   fontWeight: FontWeight.w400,
                 ),),
-              SizedBox(height: 25,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
               Text("Scorre IPSS",
                 style: TextStyle(
                   fontSize: 17,
                   color: Colors.blueGrey[900],
                   fontWeight: FontWeight.w900,
                 ),),
-              SizedBox(height: 12,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
               Container(
                 width: MediaQuery.of(context).size.width*0.25,
                 height: MediaQuery.of(context).size.height*0.05,
@@ -104,13 +104,15 @@ class _RecapState extends State<Recap> {
                   color: Colors.blueGrey[900],
                   fontWeight: FontWeight.w300,
                 ),),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+
               Text("Qualité de vie",
                 style: TextStyle(
                   fontSize: 17,
                   color: Colors.blueGrey[900],
                   fontWeight: FontWeight.w900,
                 ),),
-              SizedBox(height: 12,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
               Container(
                 width: MediaQuery.of(context).size.width*0.25,
                 height: MediaQuery.of(context).size.height*0.05,
@@ -136,13 +138,15 @@ class _RecapState extends State<Recap> {
                   color: Colors.blueGrey[900],
                   fontWeight: FontWeight.w300,
                 ),),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+
               Text("Score IIEFS",
                 style: TextStyle(
                   fontSize: 17,
                   color: Colors.blueGrey[900],
                   fontWeight: FontWeight.w900,
                 ),),
-              SizedBox(height: 12,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01,),
               Container(
                 width: MediaQuery.of(context).size.width*0.25,
                 height: MediaQuery.of(context).size.height*0.05,
@@ -168,12 +172,12 @@ class _RecapState extends State<Recap> {
                   color: Colors.blueGrey[900],
                   fontWeight: FontWeight.w300,
                 ),),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.2,),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.04,),
             IconRounded_Button(
               title: 'Continue',
               image: 'assets/next.png',
               onpressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>CongratsPAge()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CongratsPAge(isdoctor: true,)));
               },)
            ],
           ),

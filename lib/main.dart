@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Patient_info(),
+      home: PageFormulaire(isdoctor: true,),
     );
   }
 

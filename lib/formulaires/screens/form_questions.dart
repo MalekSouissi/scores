@@ -1,12 +1,17 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:scores/formulaires/components/form_info.dart';
 import 'package:scores/formulaires/components/user_info.dart';
+import 'package:scores/formulaires/screens/form_details.dart';
 import 'package:scores/formulaires/screens/form_questions2.dart';
+import 'package:scores/shared/constants.dart';
 import 'package:scores/shared/iconroundedbutton.dart';
 import 'package:scores/shared/roundedbutton.dart';
 
 class FormQuestions1 extends StatefulWidget {
+  final bool isdoctor;
+  FormQuestions1({this.isdoctor});
   @override
   _FormQuestions1State createState() => _FormQuestions1State();
 }
@@ -123,14 +128,44 @@ class _FormQuestions1State extends State<FormQuestions1> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Padding(
+                  widget.isdoctor?Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>FormDetails(isfinished: false,isdoctor: widget.isdoctor,)));
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Icon(EvaIcons.arrowBack,size: 24,color: DeactiveIconColor,),
+                            SizedBox(width: 10,),
+                            Text('Retour',style: TextStyle(fontSize: 18,color: DeactiveIconColor),),
+                          ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>FormQuestions2(isdoctor: widget.isdoctor,)));
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text('Suivant',style: TextStyle(fontSize: 18,color: DeactiveIconColor),),
+                            SizedBox(width: 10,),
+                            Icon(EvaIcons.arrowForward,size: 24,color: DeactiveIconColor,),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ):Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 20),
                     child: IconRounded_Button(
                       title: 'Continue',
                       image: 'assets/next.png',
                       onpressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>FormQuestions2()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>FormQuestions2(isdoctor: widget.isdoctor,)));
                       },
                     ),
                   ),

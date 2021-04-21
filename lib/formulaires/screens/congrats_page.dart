@@ -8,6 +8,8 @@ import 'package:scores/shared/iconroundedbutton.dart';
 import 'package:scores/shared/roundedbutton.dart';
 
 class CongratsPAge extends StatefulWidget {
+  final bool isdoctor;
+  CongratsPAge({this.isdoctor});
   @override
   _CongratsPAgeState createState() => _CongratsPAgeState();
 }
@@ -63,11 +65,17 @@ class _CongratsPAgeState extends State<CongratsPAge> {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 0, vertical: 20),
-                    child: IconRounded_Button(
+                    child: widget.isdoctor?IconRounded_Button(
                       title: 'RETOUR A L\'ACCEUIL',
                       image: 'assets/next.png',
                       onpressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>PageFormulaire()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>PageFormulaire(isdoctor: true,)));
+                      },
+                    ):IconRounded_Button(
+                      title: 'RETOUR A L\'ACCEUIL',
+                      image: 'assets/next.png',
+                      onpressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>PageFormulaire(isdoctor: false,)));
                       },
                     ),
                   ),

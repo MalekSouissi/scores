@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scores/formulaires/screens/form_details.dart';
 import 'package:scores/profil/components/Modal2.dart';
 import 'package:scores/shared/constants.dart';
 
@@ -8,8 +9,10 @@ class Module extends StatefulWidget {
   final String Text1;
   // ignore: non_constant_identifier_names
   final String Text2;
+  final bool isfinished;
+  final bool isdoctor;
 
-  const Module({Key key, this.Text1, this.Text2}) : super(key: key);
+  const Module({Key key, this.Text1, this.Text2,this.isdoctor,this.isfinished}) : super(key: key);
 
   @override
   _ModuleState createState() => _ModuleState();
@@ -35,27 +38,32 @@ class _ModuleState extends State<Module> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          RichText(
-            text: TextSpan(children: <TextSpan>[
-              TextSpan(
-                text: widget.Text1,
-                style: TextStyle(
-                  fontFamily: 'GandhiSans',
-                  fontSize: 15,
-                  color: Color(0xFF0A001F),
-                  fontWeight: FontWeight.bold,
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>FormDetails(isdoctor:widget.isdoctor ,isfinished: widget.isfinished,)));
+            },
+            child: RichText(
+              text: TextSpan(children: <TextSpan>[
+                TextSpan(
+                  text: widget.Text1,
+                  style: TextStyle(
+                    fontFamily: 'GandhiSans',
+                    fontSize: 15,
+                    color: Color(0xFF0A001F),
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              TextSpan(
-                text: widget.Text2
-                    .toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'GandhiSans',
-                  fontSize: 15,
-                  color: Color(0xFF0A001F),
+                TextSpan(
+                  text: widget.Text2
+                      .toUpperCase(),
+                  style: TextStyle(
+                    fontFamily: 'GandhiSans',
+                    fontSize: 15,
+                    color: Color(0xFF0A001F),
+                  ),
                 ),
-              ),
-            ]),
+              ]),
+            ),
           ),
           Container(
             width: MediaQuery.of(context).size.width * 0.185,

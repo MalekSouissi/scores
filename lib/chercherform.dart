@@ -25,6 +25,8 @@ class _ChercherFormState extends State<ChercherForm> {
         Module(
           Text1: 'Module 1 : ',
           Text2: 'BILAN DE REEDUCATION\n PELVI-PERINEALE',
+          isdoctor: true,
+          isfinished: false,
         ),
         SizedBox(
           height: 30,
@@ -32,6 +34,8 @@ class _ChercherFormState extends State<ChercherForm> {
         Module(
           Text1: 'Module 1 : ',
           Text2: 'BILAN DE REEDUCATION\n PELVI-PERINEALE',
+          isdoctor: true,
+          isfinished: false,
         ),
         SizedBox(
           height: 30,
@@ -39,6 +43,8 @@ class _ChercherFormState extends State<ChercherForm> {
         Module(
           Text1: 'Module 1 : ',
           Text2: 'BILAN DE REEDUCATION\n PELVI-PERINEALE',
+          isdoctor: true,
+          isfinished: false,
         ),
         SizedBox(
           height: 30,
@@ -46,6 +52,8 @@ class _ChercherFormState extends State<ChercherForm> {
         Module(
           Text1: 'Module 1 : ',
           Text2: 'BILAN DE REEDUCATION\n PELVI-PERINEALE',
+          isdoctor: true,
+          isfinished: false,
         ),
           ],
         ),
